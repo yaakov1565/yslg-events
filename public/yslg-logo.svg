@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+  <defs>
+    <style>
+      .logo-text { fill: #16a085; }
+    </style>
+  </defs>
+  <text x="50" y="650" font-family="serif" font-size="500" font-weight="bold" class="logo-text">Yslg</text>
+  <text x="260" y="750" font-family="sans-serif" font-size="120" font-weight="bold" class="logo-text">EVENTS</text>
+  <text x="430" y="840" font-family="sans-serif" font-size="70" font-weight="normal" class="logo-text">NEW YORK</text>
+  <path d="M 920 680 Q 940 680 940 700 Q 940 720 920 720 Q 820 720 780 680 Q 760 660 780 640 Q 820 600 920 600 Q 940 600 940 620 Q 940 640 920 640 L 840 640 Q 820 640 820 660 Q 820 680 840 680 Z" class="logo-text"/>
+</svg>
