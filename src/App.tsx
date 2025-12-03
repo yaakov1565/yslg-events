@@ -204,18 +204,18 @@ ${formData.message}
       <section id="home" className="relative min-h-screen flex items-center justify-center py-20 bg-white overflow-x-hidden">
         <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-20">
           <div className="mb-12 flex flex-col items-center w-full">
-            <div className="mb-8 w-full flex justify-center">
+            <div className="mb-8 w-full flex justify-center items-center">
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="block mx-auto"
+                className="block"
                 style={{
-                  animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
-                  width: '60%',
-                  maxWidth: '140px',
+                  width: '55%',
+                  maxWidth: '130px',
                   height: 'auto',
-                  maxHeight: '150px',
-                  objectFit: 'contain'
+                  maxHeight: '140px',
+                  objectFit: 'contain',
+                  margin: '0 auto'
                 }}
               />
             </div>
