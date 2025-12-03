@@ -202,26 +202,16 @@ ${formData.message}
       </nav>
 
       <section id="home" className="relative min-h-screen flex items-center justify-center py-20 bg-white">
-        <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-4">
+        <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-6 sm:px-10 md:px-16">
           <div className="mb-12 flex flex-col items-center">
-            <div className="relative mb-8 w-[90%] max-w-[180px] sm:max-w-[250px] md:max-w-[400px] lg:max-w-[550px]" style={{
-              animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
-            }}>
-              <div className="absolute inset-0 animate-pulse"
-                style={{
-                  background: 'radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, transparent 70%)',
-                  filter: 'blur(40px)',
-                  transform: 'scale(1.5)'
-                }}
-              />
+            <div className="relative mb-8 flex justify-center w-full">
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="relative w-full h-auto"
+                className="w-[75%] max-w-[160px] sm:max-w-[220px] md:max-w-[350px] lg:max-w-[500px] h-auto"
                 style={{
-                  animation: 'logoGlow 4s ease-in-out infinite',
-                  animationDelay: '2s',
-                  maxHeight: '200px',
+                  animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
+                  maxHeight: '180px',
                   objectFit: 'contain'
                 }}
               />
