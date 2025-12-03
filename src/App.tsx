@@ -201,17 +201,20 @@ ${formData.message}
         )}
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center justify-center py-20 bg-white">
-        <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-6 sm:px-10 md:px-16">
-          <div className="mb-12 flex flex-col items-center">
-            <div className="relative mb-8 flex justify-center w-full">
+      <section id="home" className="relative min-h-screen flex items-center justify-center py-20 bg-white overflow-x-hidden">
+        <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-20">
+          <div className="mb-12 flex flex-col items-center w-full">
+            <div className="mb-8 w-full flex justify-center">
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="w-[75%] max-w-[160px] sm:max-w-[220px] md:max-w-[350px] lg:max-w-[500px] h-auto"
+                className="block mx-auto"
                 style={{
                   animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards',
-                  maxHeight: '180px',
+                  width: '60%',
+                  maxWidth: '140px',
+                  height: 'auto',
+                  maxHeight: '150px',
                   objectFit: 'contain'
                 }}
               />
