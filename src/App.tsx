@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Users, Building2, Calendar, CheckCircle, Star, Mail, Phone, MapPin, Menu, X, Flower2 } from 'lucide-react';
+import { Users, Building2, Calendar, CheckCircle, Star, Mail, Phone, MapPin, Menu, X } from 'lucide-react';
 
 function App() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -212,16 +212,9 @@ ${formData.message}
           }}
         />
 
-        <Flower2 className="absolute top-20 left-10 w-16 h-16 text-white/20 z-5" style={{ animation: 'float 6s ease-in-out infinite' }} />
-        <Flower2 className="absolute top-40 right-20 w-20 h-20 text-white/30 z-5" style={{ animation: 'floatSlow 8s ease-in-out infinite', animationDelay: '1s' }} />
-        <Flower2 className="absolute bottom-32 left-1/4 w-12 h-12 text-white/25 z-5" style={{ animation: 'float 7s ease-in-out infinite', animationDelay: '2s' }} />
-        <Flower2 className="absolute bottom-40 right-1/3 w-14 h-14 text-white/20 z-5" style={{ animation: 'floatSlow 9s ease-in-out infinite', animationDelay: '0.5s' }} />
-        <Flower2 className="absolute top-1/3 left-1/3 w-10 h-10 text-white/15 z-5" style={{ animation: 'float 5s ease-in-out infinite', animationDelay: '3s' }} />
-        <Flower2 className="absolute top-2/3 right-1/4 w-16 h-16 text-white/25 z-5" style={{ animation: 'floatSlow 10s ease-in-out infinite', animationDelay: '1.5s' }} />
-
         <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto my-8">
           <div className="mb-16 flex flex-col items-center">
-            <div className="relative mb-12" style={{
+            <div className="relative mb-12 w-full max-w-[700px]" style={{
               animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
             }}>
               <div className="absolute inset-0 animate-pulse"
@@ -234,7 +227,7 @@ ${formData.message}
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="relative w-[450px] md:w-[600px] lg:w-[700px] h-auto"
+                className="relative w-full h-auto px-4"
                 style={{
                   animation: 'logoGlow 4s ease-in-out infinite',
                   animationDelay: '2s'
