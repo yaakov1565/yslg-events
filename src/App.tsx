@@ -156,11 +156,11 @@ ${formData.message}
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xl py-5' : 'bg-white/80 backdrop-blur-md py-7 shadow-md'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xl py-3' : 'bg-white/80 backdrop-blur-md py-4 shadow-md'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <img src="/yslg-logo.svg" alt="YSLG Events" className={`transition-all duration-300 ${isScrolled ? 'h-20' : 'h-24'} w-auto max-w-[120px] sm:max-w-[140px] md:max-w-none drop-shadow-lg`} />
+              <img src="/yslg-logo.svg" alt="YSLG Events" className={`transition-all duration-300 ${isScrolled ? 'h-14' : 'h-16'} w-auto max-w-[100px] sm:max-w-[120px] md:max-w-none drop-shadow-lg my-1`} />
             </div>
 
             <div className="hidden md:flex space-x-10">
@@ -168,7 +168,10 @@ ${formData.message}
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-lg font-semibold transition-all hover:text-emerald-500 hover:scale-110 text-gray-900`}
+                  className={`text-lg font-semibold transition-all hover:scale-110 text-gray-900`}
+                  style={{ transition: 'color 0.3s' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#079669'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#111827'}
                 >
                   {item}
                 </button>
@@ -191,7 +194,10 @@ ${formData.message}
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className="block w-full text-left text-gray-700 hover:text-emerald-600 font-medium transition-colors"
+                  className="block w-full text-left text-gray-700 font-medium transition-colors"
+                  style={{ transition: 'color 0.3s' }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = '#079669'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = '#374151'}
                 >
                   {item}
                 </button>
@@ -201,13 +207,13 @@ ${formData.message}
         )}
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 overflow-hidden" style={{ background: 'linear-gradient(to bottom right, #f0fdf4, #ffffff, #f0fdf4)' }}>
         <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/60 via-teal-100/50 to-cyan-100/60 animate-gradient-shift"></div>
+          <div className="absolute inset-0 animate-gradient-shift" style={{ background: 'linear-gradient(to bottom right, rgba(7, 150, 105, 0.08), rgba(7, 150, 105, 0.04), rgba(7, 150, 105, 0.08))' }}></div>
           <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/30 rounded-full blur-3xl animate-float-slow"></div>
-            <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-300/30 rounded-full blur-3xl animate-float-slower"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-300/30 rounded-full blur-3xl animate-float-slowest"></div>
+            <div className="absolute top-20 left-10 w-72 h-72 rounded-full blur-3xl animate-float-slow" style={{ backgroundColor: 'rgba(7, 150, 105, 0.15)' }}></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl animate-float-slower" style={{ backgroundColor: 'rgba(7, 150, 105, 0.15)' }}></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full blur-3xl animate-float-slowest" style={{ backgroundColor: 'rgba(7, 150, 105, 0.15)' }}></div>
           </div>
         </div>
         <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-20">
@@ -258,12 +264,15 @@ ${formData.message}
           </div>
           <button
             onClick={() => scrollToSection('contact')}
-            className="bg-emerald-600 hover:bg-emerald-700 text-white px-12 py-6 rounded-lg text-xl font-semibold transition-all transform hover:scale-110 shadow-2xl opacity-0 hover:shadow-emerald-500/50"
+            className="text-white px-12 py-6 rounded-lg text-xl font-semibold transition-all transform hover:scale-110 shadow-2xl opacity-0"
             style={{
+              backgroundColor: '#079669',
               animationDelay: '3.2s',
               animation: 'fadeInUp 1s ease-out 3.2s forwards',
-              boxShadow: '0 0 40px rgba(16, 185, 129, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3)'
+              boxShadow: '0 0 40px rgba(7, 150, 105, 0.4), 0 20px 40px rgba(0, 0, 0, 0.3)'
             }}
+            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#065f4d'}
+            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#079669'}
           >
             Start Planning Your Event
           </button>
@@ -284,7 +293,7 @@ ${formData.message}
                 data-direction={service.direction}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <service.icon className="h-12 w-12 text-emerald-600 mb-4" />
+                <service.icon className="h-12 w-12 mb-4" style={{ color: '#079669' }} />
                 <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{service.description}</p>
               </div>
@@ -313,7 +322,7 @@ ${formData.message}
                 data-direction={feature.direction}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CheckCircle className="h-10 w-10 text-emerald-600 mx-auto mb-4" />
+                <CheckCircle className="h-10 w-10 mx-auto mb-4" style={{ color: '#079669' }} />
                 <h3 className="text-lg font-bold mb-2">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.description}</p>
               </div>
@@ -344,7 +353,7 @@ ${formData.message}
                   />
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-6">
-                  <span className="text-emerald-400 text-sm font-semibold mb-2">{project.category}</span>
+                  <span className="text-sm font-semibold mb-2" style={{ color: '#079669' }}>{project.category}</span>
                   <h3 className="text-white text-xl font-bold mb-1">{project.title}</h3>
                   <p className="text-gray-300 text-sm">{project.guests} Guests</p>
                 </div>
@@ -406,7 +415,9 @@ ${formData.message}
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     />
                   </div>
                   <div>
@@ -420,7 +431,9 @@ ${formData.message}
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     />
                   </div>
                 </div>
@@ -437,7 +450,9 @@ ${formData.message}
                       required
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     />
                   </div>
                   <div>
@@ -450,7 +465,9 @@ ${formData.message}
                       required
                       value={formData.eventType}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     >
                       <option value="">Select type</option>
                       <option value="corporate">Corporate Event</option>
@@ -473,7 +490,9 @@ ${formData.message}
                       name="eventDate"
                       value={formData.eventDate}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     />
                   </div>
                   <div>
@@ -487,7 +506,9 @@ ${formData.message}
                       value={formData.guestCount}
                       onChange={handleInputChange}
                       placeholder="e.g., 100"
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                      onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                      onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                     />
                   </div>
                 </div>
@@ -501,7 +522,9 @@ ${formData.message}
                     name="budget"
                     value={formData.budget}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition"
+                    onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                    onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                   >
                     <option value="">Select range</option>
                     <option value="under-10k">Under $10,000</option>
@@ -524,13 +547,18 @@ ${formData.message}
                     value={formData.message}
                     onChange={handleInputChange}
                     placeholder="Share your ideas, requirements, and any specific details..."
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-600 focus:border-transparent outline-none transition resize-none"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:border-transparent outline-none transition resize-none"
+                    onFocus={(e) => e.currentTarget.style.boxShadow = '0 0 0 2px #079669'}
+                    onBlur={(e) => e.currentTarget.style.boxShadow = 'none'}
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105"
+                  className="w-full text-white py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105"
+                  style={{ backgroundColor: '#079669' }}
+                  onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#065f4d'}
+                  onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#079669'}
                 >
                   Submit Inquiry
                 </button>
@@ -542,7 +570,7 @@ ${formData.message}
                 <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
                 <div className="space-y-4">
                   <div className="flex items-start space-x-4">
-                    <Mail className="h-6 w-6 text-emerald-600 mt-1 flex-shrink-0" />
+                    <Mail className="h-6 w-6 mt-1 flex-shrink-0" style={{ color: '#079669' }} />
                     <div>
                       <p className="font-semibold">Email Us</p>
                       <p className="text-gray-600">hello@yslgevents.com</p>
@@ -551,7 +579,7 @@ ${formData.message}
                 </div>
               </div>
 
-              <div className="bg-gradient-to-br from-emerald-50 to-teal-50 p-8 rounded-xl">
+              <div className="p-8 rounded-xl" style={{ background: 'linear-gradient(to bottom right, rgba(7, 150, 105, 0.08), rgba(7, 150, 105, 0.12))' }}>
                 <h4 className="text-xl font-bold mb-4">Why Start With YSLG?</h4>
                 <ul className="space-y-3">
                   {[
@@ -561,7 +589,7 @@ ${formData.message}
                     'Dedicated event coordinator'
                   ].map((item, index) => (
                     <li key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" style={{ color: '#079669' }} />
                       <span className="text-gray-700">{item}</span>
                     </li>
                   ))}
