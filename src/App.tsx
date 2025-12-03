@@ -201,10 +201,10 @@ ${formData.message}
         )}
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-32 bg-gradient-to-br from-emerald-900 via-teal-800 to-emerald-950">
-        <div className="relative z-10 text-center text-white px-6 sm:px-8 max-w-7xl mx-auto my-8">
-          <div className="mb-16 flex flex-col items-center">
-            <div className="relative mb-12 w-full max-w-[280px] sm:max-w-[400px] md:max-w-[550px] lg:max-w-[700px]" style={{
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 bg-white">
+        <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
+          <div className="mb-12 flex flex-col items-center">
+            <div className="relative mb-8 w-full max-w-[250px] sm:max-w-[350px] md:max-w-[500px] lg:max-w-[650px]" style={{
               animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
             }}>
               <div className="absolute inset-0 animate-pulse"
@@ -225,29 +225,26 @@ ${formData.message}
               />
             </div>
             <div
-              className="opacity-0 mb-8"
+              className="opacity-0 mb-8 px-4"
               style={{
                 animationDelay: '2.5s',
                 animation: 'fadeInUp 1.2s ease-out 2.5s forwards'
               }}
             >
               <p
-                className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3"
+                className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3"
                 style={{
                   fontFamily: 'Playfair Display, serif',
                   color: '#16a085',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.3), 0 0 30px rgba(22, 160, 133, 0.4)',
                   letterSpacing: '0.05em'
                 }}
               >
                 Creating Unforgettable Moments
               </p>
               <p
-                className="text-xl md:text-2xl font-light italic"
+                className="text-lg sm:text-xl md:text-2xl font-light italic text-gray-700"
                 style={{
                   fontFamily: 'Georgia, serif',
-                  color: '#ffffff',
-                  textShadow: '1px 1px 3px rgba(0,0,0,0.5)',
                   animation: 'letterSpacing 3s ease-in-out 3.7s infinite'
                 }}
               >
