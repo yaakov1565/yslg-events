@@ -39,6 +39,22 @@
   .animate-slide-in-right {
     animation: slideInRight 0.8s ease-out forwards;
   }
+
+  .animate-gradient-shift {
+    animation: gradientShift 20s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: floatSlow 25s ease-in-out infinite;
+  }
+
+  .animate-float-slower {
+    animation: floatSlower 30s ease-in-out infinite;
+  }
+
+  .animate-float-slowest {
+    animation: floatSlowest 35s ease-in-out infinite;
+  }
 }
 
 @keyframes fadeInUp {
@@ -170,5 +186,56 @@
   }
   50% {
     letter-spacing: 0.15em;
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(5%, -5%) scale(1.05);
+    opacity: 0.9;
+  }
+  66% {
+    transform: translate(-5%, 5%) scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -40px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 30px) scale(0.95);
+  }
+}
+
+@keyframes floatSlower {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-40px, 30px) scale(1.05);
+  }
+  66% {
+    transform: translate(25px, -35px) scale(0.9);
+  }
+}
+
+@keyframes floatSlowest {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translate(20px, 40px) rotate(5deg) scale(1.08);
+  }
+  66% {
+    transform: translate(-30px, -20px) rotate(-5deg) scale(0.92);
   }
 }

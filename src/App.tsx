@@ -156,11 +156,11 @@ ${formData.message}
 
   return (
     <div className="min-h-screen bg-white">
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xl py-5' : 'bg-white/10 backdrop-blur-sm py-7 border-b border-white/20'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white/95 backdrop-blur-md shadow-xl py-5' : 'bg-white/80 backdrop-blur-md py-7 shadow-md'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center">
             <div className="flex items-center space-x-3">
-              <img src="/yslg-logo.svg" alt="YSLG Events" className={`transition-all duration-300 ${isScrolled ? 'h-20' : 'h-24'} w-auto drop-shadow-lg`} />
+              <img src="/yslg-logo.svg" alt="YSLG Events" className={`transition-all duration-300 ${isScrolled ? 'h-20' : 'h-24'} w-auto max-w-[120px] sm:max-w-[140px] md:max-w-none drop-shadow-lg`} />
             </div>
 
             <div className="hidden md:flex space-x-10">
@@ -168,7 +168,7 @@ ${formData.message}
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase())}
-                  className={`text-lg font-semibold transition-all hover:text-emerald-500 hover:scale-110 ${isScrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'}`}
+                  className={`text-lg font-semibold transition-all hover:text-emerald-500 hover:scale-110 text-gray-900`}
                 >
                   {item}
                 </button>
@@ -177,7 +177,7 @@ ${formData.message}
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden ${isScrolled ? 'text-gray-900' : 'text-white'}`}
+              className="md:hidden text-gray-900"
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
@@ -201,21 +201,30 @@ ${formData.message}
         )}
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center justify-center py-20 bg-white overflow-x-hidden">
+      <section id="home" className="relative min-h-screen flex items-center justify-center pt-32 pb-20 bg-gradient-to-br from-emerald-50 via-white to-teal-50 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-100/60 via-teal-100/50 to-cyan-100/60 animate-gradient-shift"></div>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-20 left-10 w-72 h-72 bg-emerald-300/30 rounded-full blur-3xl animate-float-slow"></div>
+            <div className="absolute bottom-20 right-10 w-96 h-96 bg-teal-300/30 rounded-full blur-3xl animate-float-slower"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-300/30 rounded-full blur-3xl animate-float-slowest"></div>
+          </div>
+        </div>
         <div className="relative z-10 text-center w-full max-w-7xl mx-auto px-8 sm:px-12 md:px-20">
           <div className="mb-12 flex flex-col items-center w-full">
-            <div className="mb-8 w-full flex justify-center items-center">
+            <div className="mb-10 w-full flex justify-center items-center">
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="block"
+                className="block animate-logo-entrance"
                 style={{
-                  width: '55%',
-                  maxWidth: '130px',
+                  width: '80%',
+                  maxWidth: '220px',
                   height: 'auto',
-                  maxHeight: '140px',
+                  maxHeight: '240px',
                   objectFit: 'contain',
-                  margin: '0 auto'
+                  margin: '0 auto',
+                  animation: 'logoEntrance 1.5s ease-out forwards, logoGlow 6s ease-in-out 1.5s infinite'
                 }}
               />
             </div>
