@@ -201,20 +201,10 @@ ${formData.message}
         )}
       </nav>
 
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-32">
-        <div
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: 'url(https://images.pexels.com/photos/1167355/pexels-photo-1167355.jpeg?auto=compress&cs=tinysrgb&w=1600)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            filter: 'brightness(0.6)'
-          }}
-        />
-
-        <div className="relative z-10 text-center text-white px-4 max-w-7xl mx-auto my-8">
+      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden py-32 bg-gradient-to-br from-emerald-900 via-teal-800 to-emerald-950">
+        <div className="relative z-10 text-center text-white px-6 sm:px-8 max-w-7xl mx-auto my-8">
           <div className="mb-16 flex flex-col items-center">
-            <div className="relative mb-12 w-full max-w-[700px]" style={{
+            <div className="relative mb-12 w-full max-w-[280px] sm:max-w-[400px] md:max-w-[550px] lg:max-w-[700px]" style={{
               animation: 'logoEntrance 2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards'
             }}>
               <div className="absolute inset-0 animate-pulse"
@@ -227,7 +217,7 @@ ${formData.message}
               <img
                 src="/yslg-logo.svg"
                 alt="YSLG Events"
-                className="relative w-full h-auto px-4"
+                className="relative w-full h-auto"
                 style={{
                   animation: 'logoGlow 4s ease-in-out infinite',
                   animationDelay: '2s'
