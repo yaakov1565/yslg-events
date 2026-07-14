@@ -8,6 +8,7 @@ tone_instructions: |
   Flag all potential vulnerabilities clearly with severity levels.
 
 reviews:
+  review_status: false # suppress chatter
   profile: assertive
   request_changes_workflow: true
   high_level_summary: true
