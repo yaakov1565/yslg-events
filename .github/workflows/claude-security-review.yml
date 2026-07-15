@@ -1,0 +1,38 @@
+name: Claude Security Review
+
+permissions:
+  contents: read
+
+# Stage 2 of the review pipeline: runs only once the PR carries the
+# `security-review` label — added after the CodeRabbit/scanner loop is clean —
+# so this (paid, deep) pass audits already-reviewed code instead of every push.
+on:
+  pull_request:
+    types: [labeled, synchronize]
+
+concurrency:
+  group: security-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  security:
+    name: Claude Security Review
+    if: contains(github.event.pull_request.labels.*.name, 'security-review')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write # required by the action to post findings as PR comments
+    # Note: scan instructions are read from the PR head. Acceptable here — private
+    # repos, no external contributors. Revisit if outside collaborators are added.
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          fetch-depth: 2
+
+      - uses: anthropics/claude-code-security-review@0c6a49f1fa56a1d472575da86a94dbc1edb78eda # main 2026-02
+        with:
+          comment-pr: true
+          claude-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude-model: claude-opus-4-8
+          custom-security-scan-instructions: .github/security-scan-instructions.md

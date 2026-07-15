@@ -1,0 +1,53 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+# YSLG fleet standard — generic, identical in every repo (no per-project rules).
+language: en-US
+
+tone_instructions: |
+  Be strict and thorough, especially on security issues.
+  Do not hesitate to request changes for any security concern, no matter how minor.
+  Flag all potential vulnerabilities clearly with severity levels.
+
+reviews:
+  review_status: false # suppress chatter
+  profile: assertive
+  request_changes_workflow: true
+  high_level_summary: true
+  poem: false
+  collapse_walkthrough: true
+  auto_review:
+    enabled: true
+    drafts: false
+
+  path_instructions:
+    - path: "**"
+      instructions: |
+        SECURITY IS THE TOP PRIORITY. Review with a security-first mindset.
+        Flag ANY of the following as CRITICAL:
+        - Hardcoded secrets, API keys, or credentials
+        - Missing authentication checks on protected routes or server actions
+        - Missing AUTHORIZATION checks: any handler reading/mutating a record by
+          client-supplied ID without verifying the caller may access THAT record
+          (IDOR). Multi-tenant data must be scoped in every query.
+        - User input reaching DB/filesystem/external services without validation
+        - Raw SQL string interpolation, command injection, path traversal
+        - Sensitive data or stack traces exposed in errors, logs, or responses
+        - Unverified incoming webhook payloads (missing signature check)
+        - Unsafe dangerouslySetInnerHTML / unescaped user content in HTML or email
+        - Insecure cookie/session settings, missing CSRF on state-changing requests
+        - File uploads without content-type (magic byte) validation and size limits
+
+  path_filters:
+    - "!drizzle/**"
+    - "!prisma/migrations/**"
+    - "!**/node_modules/**"
+    - "!package-lock.json"
+    - "!pnpm-lock.yaml"
+    - "!**/*.min.js"
+    - "!**/*.min.css"
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  learnings:
+    scope: auto
